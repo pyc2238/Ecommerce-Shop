@@ -11,10 +11,26 @@
 |
 */
 
+
+
+
+
 Route::get('/', function () {
     return view('front.home');
 });
 
-Route::get('admin', function () {
-    return view('admin.index');
+
+// Front End Location 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['prefix' => 'admin','middleware' => ['auth','admin']],function(){
+    
+    Route::get('/', function () {
+        return view('admin.index');
+    });
+
 });
+// Admin End Location 
