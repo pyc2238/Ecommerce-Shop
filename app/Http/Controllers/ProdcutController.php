@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Products_model;
-
+use Validator; 
 class ProdcutController extends Controller
 {
     /**
@@ -25,7 +25,7 @@ class ProdcutController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.product.create');
     }
 
     /**
@@ -36,7 +36,25 @@ class ProdcutController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $formInput = $request->except('image');
+        $this->validate($request,[
+            'pro_name'      => 'required',
+            'pro_code'      => 'required',
+            'pro_price'     => 'required',
+            'pro_info'      => 'required',
+            'spl_price'     => 'required',
+            'image'         => 'image|mimes:png,jpg,jpeg|max:10000'
+        ]);
+        $image = $request->image;
+        if($image){
+            $imageName = $image->getClientOriginalName();
+            $image->move('images',$imageName);
+            $formInput['image'] = $imageName;
+
+            Products_model::create($formInput);
+
+            return redirect()->back();
+        }
     }
 
     /**
@@ -81,6 +99,8 @@ class ProdcutController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $deleteData = Products_model::findOrFail($id);
+        $deleteData->delete();
+        return redirect()->back();
     }
 }
