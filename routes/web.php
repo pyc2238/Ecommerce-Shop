@@ -32,6 +32,7 @@ Route::group(['prefix' => 'admin','middleware' => ['auth','admin']],function(){
         return view('admin.index');
     });
 
-    Route::resource('product','ProdcutController');
+    Route::resource('product', 'ProdcutController');
+    Route::resource('category', 'CategoriesController');
 });
 // Admin End Location 
