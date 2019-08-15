@@ -50,7 +50,6 @@
                   <button type="button" class="btn btn-sm btn-outline-secondary">Add To Cart</button>
                 </div>
 
-                <small class="text-muted">9 mins</small>
               </div>
             </div>
           </div>

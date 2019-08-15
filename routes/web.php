@@ -16,6 +16,7 @@
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/shop', 'HomeController@shop')->name('shop');
 
 // Front End Location 
 Auth::routes();

@@ -28,4 +28,10 @@ class HomeController extends Controller
 
         return view('front.home',compact('products'));
     }
+
+    public function shop(){
+        $products = Products_model::all();
+
+        return view('front.shop',compact('products'));
+    }
 }
