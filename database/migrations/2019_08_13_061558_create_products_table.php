@@ -19,6 +19,8 @@ class CreateProductsTable extends Migration
             $table->string('pro_code');
             $table->integer('pro_price');
             $table->text('pro_info');
+            $table->integer('stock');
+            $table->integer('category_id');
             $table->string('image')->nullable();
             $table->integer('spl_price');
             $table->timestamps();
