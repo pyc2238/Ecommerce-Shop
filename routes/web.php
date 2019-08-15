@@ -14,17 +14,11 @@
 
 
 
-
-Route::get('/', function () {
-    return view('front.home');
-});
-
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
 
 // Front End Location 
-
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['prefix' => 'admin','middleware' => ['auth','admin']],function(){
     
