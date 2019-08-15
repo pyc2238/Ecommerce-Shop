@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Products_model;
+use App\Category_model;
 use Validator; 
 class ProdcutController extends Controller
 {
@@ -25,7 +26,8 @@ class ProdcutController extends Controller
      */
     public function create()
     {
-        return view('admin.product.create');
+        $categories = Category_model::pluck('name','id');
+        return view('admin.product.create',compact('categories'));
     }
 
     /**

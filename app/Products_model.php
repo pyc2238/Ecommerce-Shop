@@ -15,5 +15,7 @@ class Products_model extends Model
         'image',
         'pro_info',
         'spl_price',
+        'stock',
+        'category_id',
     ];
 }

@@ -33,11 +33,32 @@
                             <span class="text-danger">{{ $errors->first('pro_price') }}</span>
                         </div>
 
+
+                        <div class="form-group{{ $errors->has('stock')?'has-error':'' }}">
+                            <label for="stock">Stock</label>
+                            <input type="text" class="form-control" name="stock" id="stock" placeholder="Stock">
+                            <span class="text-danger">{{ $errors->first('stock') }}</span>
+                        </div>
+
                         <div class="form-group{{ $errors->has('pro_info')?'has-error':'' }}">
                             <label for="pro_info">Description</label>
                             <textarea name="pro_info" id="pro_info" rows="5" class="form-control"></textarea>
                             <span class="text-danger">{{ $errors->first('pro_info') }}</span>
                         </div>
+
+
+                        <div class="form-group{{ $errors->has('category_id')?'has-error':'' }}">
+                            <label for="category_id">Category</label>
+                            <select name="category_id" id="category_id" class="form-control">
+                                <option value="">-- Select Category --</option>
+                                @foreach($categories as $id=>$category)
+                                <option value="{{ $id }}">{{ $category }}</option>
+                                @endforeach
+                            </select>
+                            <span class="text-danger">{{ $errors->first('category_id') }}</span>
+                        </div>
+
+
 
                         <div class="form-group{{ $errors->has('image')?'has-error':'' }}">
                             <label for="image">Image</label>
