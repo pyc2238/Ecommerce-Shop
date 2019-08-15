@@ -22,7 +22,7 @@
                 <div class="col-md-4">
 
                     <div class="card mb-4 shadow-sm">
-                        <img class="card-img-top" alt="Card image cap" src="{{ url('images',$product->image) }}">
+                        <img class="card-img-top" alt="Card image cap" src="{{ url('images',$product->image) }}" style="height:300px;">
                         <div class="card-body">
 
                            <p class="card-text">{{ $product->pro_name }}</p>

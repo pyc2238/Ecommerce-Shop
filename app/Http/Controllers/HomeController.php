@@ -34,4 +34,11 @@ class HomeController extends Controller
 
         return view('front.shop',compact('products'));
     }
+
+    public function showCates($id){
+      
+        $category_products = Products_model::where('category_id',$id)->get();
+        $id_ = $id;
+        return view('front.category_list_pro',compact('category_products','id_'));
+    }
 }
