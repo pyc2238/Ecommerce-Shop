@@ -22,6 +22,8 @@ Route::get('/contact', function(){
     return view('front.contact');
 });
 Route::get('/productDetail/{id}', 'HomeController@detailPro');
+Route::get('/cart', 'CartController@index');
+Route::get('/cart/addItem/{id}', 'CartController@addItem');
 // Front End Location 
 Auth::routes();
 

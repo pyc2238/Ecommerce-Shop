@@ -47,7 +47,7 @@
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <a href="{{ url('productDetail',$product->id) }}" class="btn btn-sm btn-outline-secondary">View Product</a>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Add To Cart</button>
+                  <a href="{{ url('cart/addItem',$product->id) }}" class="btn btn-sm btn-outline-secondary">Add To Cart <i class="fa fa-shopping-cart"></i></a>
                 </div>
 
               </div>
