@@ -28,7 +28,7 @@
                            <p class="card-text">{{ $product->pro_name }}</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">View Product</button>
+                                    <a href="{{ url('productDetail',$product->id) }}" class="btn btn-sm btn-outline-secondary">View Product</a>
                                     <button type="button" class="btn btn-sm btn-outline-secondary">Add To Cart</button>
                                 </div>
 

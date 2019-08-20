@@ -21,6 +21,7 @@ Route::get('/categories/{id}', 'HomeController@showCates');
 Route::get('/contact', function(){
     return view('front.contact');
 });
+Route::get('/productDetail/{id}', 'HomeController@detailPro');
 // Front End Location 
 Auth::routes();
 
@@ -29,6 +30,7 @@ Route::group(['prefix' => 'admin','middleware' => ['auth','admin']],function(){
     Route::get('/', function () {
         return view('admin.index');
     });
+
 
     Route::resource('product', 'ProdcutController');
     Route::resource('category', 'CategoriesController');
