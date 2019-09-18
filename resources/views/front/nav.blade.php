@@ -29,6 +29,26 @@
       <li class="nav-item">
         <a class="nav-link" href="{{ url('/contact') }}">Contact</a>
       </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link">Wishlist</a>
+      </li>
+
+      @if(Auth::check())
+      <a class="nav-link dropdown-toggle" href="" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
+        aria-expanded="false">Profile</a>
+      <div class="dropdown-menu" aria-labelledby="dropdown01">
+        <a class="dropdown-item" href="#">{{Auth::user()->name}}</a>
+        <a class="dropdown-item" href="{{url('/logout')}}">Logout</a>
+        <a class="dropdown-item" href="{{url('/')}}/profile">Profile</a>
+      </div>
+      @else
+      <li class="nav-item"><a class="nav-link" href="{{url('/login')}}">Login</a></li>
+
+      @endif
+      <li class="nav-item" style="list-style-type: none;">
+        <a href="{{url('/cart')}}" class="nav-link">&nbsp;Cart&nbsp;({{Cart::count()}} items)&nbsp;({{Cart::total()}}
+          $)</a>
+      </li>
     </ul>
   </div>
 </nav>
